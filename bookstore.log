@@ -1,3 +1,10 @@
 1712645843609:help
 1712645909032:version
 1712646286922:exit
+1713251669835:help
+1713251679139:stacktrace
+1713252251833:create book
+1713252257847:help
+1713252331229:create book --publisher "..." --title "How" --price "10000" --author "Senki"
+1713252839335:help
+1713252851543:list books
