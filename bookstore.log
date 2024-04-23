@@ -8,3 +8,18 @@
 1713252331229:create book --publisher "..." --title "How" --price "10000" --author "Senki"
 1713252839335:help
 1713252851543:list books
+1713854237545:help
+1713854247685:list books
+1713854257742:delete book
+1713854269670:delete book --id 5
+1713854323207:delete book 5
+1713854367912:delete book --id 5
+1713855124193:update book
+1713855139873:update book 5 --price 10
+1713855143527:list books
+1713856626986:help
+1713856663828:list bookstores
+1713856773324:create bookstore Tata 1.1 10000
+1713856778922:list bookstores
+1713856817443:update bookstore 6 Tatabánya
+1713856821059:list bookstores
