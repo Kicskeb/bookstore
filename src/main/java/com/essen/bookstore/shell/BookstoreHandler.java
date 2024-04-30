@@ -11,6 +11,7 @@ import org.springframework.shell.standard.ShellMethod;
 import org.springframework.shell.standard.ShellOption;
 import org.springframework.stereotype.Service;
 
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @ShellComponent
@@ -45,10 +46,20 @@ public class BookstoreHandler {
     }
 
     @ShellMethod(key = "update bookstore", value = "Update a bookstore")
-    public void updateBookstore(@ShellOption(defaultValue = ShellOption.NULL)Long id,
+    public void updateBookstore(Long id,
                            @ShellOption(defaultValue = ShellOption.NULL)String location,
                            @ShellOption(defaultValue = ShellOption.NULL)Double priceModifier,
                            @ShellOption(defaultValue = ShellOption.NULL)Double moneyInCashRegister) {
         bookstoreService.updateBookstore(id, location, priceModifier, moneyInCashRegister);
+    }
+
+    @ShellMethod(key = "get stocks", value = "Get the full stock of a bookstore")
+    public Map<Book, Integer> getStocks(Long id) {
+        return bookstoreService.getStocks(id);
+    }
+
+    @ShellMethod(key = "change stocks", value = "Change the stock to the bookstore inventory")
+    public void changeStock(Long bookstoreId, Long bookId, Integer amount) {
+        bookstoreService.changeStock(bookstoreId, bookId, amount);
     }
 }

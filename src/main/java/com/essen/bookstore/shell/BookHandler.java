@@ -8,6 +8,8 @@ import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;
 import org.springframework.shell.standard.ShellOption;
 
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @ShellComponent
@@ -44,11 +46,16 @@ public class BookHandler {
     }
 
     @ShellMethod(key = "update book", value = "Update a book")
-    public void updateBook(@ShellOption(defaultValue = ShellOption.NULL)Long id,
+    public void updateBook(Long id,
                            @ShellOption(defaultValue = ShellOption.NULL)String publisher,
                            @ShellOption(defaultValue = ShellOption.NULL)String title,
                            @ShellOption(defaultValue = ShellOption.NULL)String author,
                            @ShellOption(defaultValue = ShellOption.NULL)Double price) {
         bookService.updateBook(id, publisher, title, author, price);
+    }
+
+    @ShellMethod(key = "find price", value = "Find the books price")
+    public String findPrices(Long id) {
+        return bookService.findPrices(id);
     }
 }

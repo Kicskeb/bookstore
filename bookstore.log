@@ -23,3 +23,8 @@
 1713856778922:list bookstores
 1713856817443:update bookstore 6 Tatabánya
 1713856821059:list bookstores
+1714460012124:list books
+1714460045901:find price 1
+1714461037338:get stocks 1
+1714461101323:get stocks 10
+1714461115234:get stocks 1
